@@ -31,7 +31,7 @@ function initModel() {
   model.addOne = function (cancion, autor, album, handler) {
     db.run(
       "INSERT INTO canciones (cancion, autor, album) VALUES (?, ?, ?);",
-      [carrera, observacion, estado],
+      [cancion, autor, album],
       function (err, rslt) {
         console.log(rslt);
         if (err) {
@@ -46,7 +46,7 @@ function initModel() {
   model.updateOne = function (id, cancion, autor, album, handler) {
     db.run(
       "UPDATE canciones set cancion = ?, autor = ?, album = ? where id = ?;",
-      [carrera, observacion, estado, id],
+      [cancion, autor, album, id],
       function (err, rslt) {
         console.log(rslt);
         if (err) {
